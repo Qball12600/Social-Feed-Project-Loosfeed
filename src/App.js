@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Header from './Header';
+import PostList from './PostList';
+import CreatePostForm from './CreatePostForm';
 
 function App() {
+  const [posts.setPosts] = useState([
+    { id:1, name: 'Joe Biden', body: 'My warning to Trump anoihrhuruhsib you bub!' liked:false, date: new Date() },
+  ]);
+  const addPost = (newPost) => {setPosts([...posts, { ...newPosts, id:posts.length + 1, liked: false, date: new Date()}]);
+};
+const toggleLike = (postId) => {
+  setPosts(posts.map(post => (post.id === postId ? { ...post, liked: !post.liked } : post)));
+};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <CreatePostForm addPost={addPost} />
+      <PostList posts={posts} toggleLike={toggleLike} />
     </div>
   );
 }
+export default App;
 
 export default App;
