@@ -1,13 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
+import '../App.css';
 
+function Post ({ post, toggleLike,deletePost }) {
+    const {id, name, body, liked, date} = post;
 
-function Post ({ post, toggleLike}) {
+    const handleLikeClick = ()=> {
+        toggleLike(id);
+    };
+
     return (
         <div className="Post">
             <p>{post.name}</p>
-            <p>{post.Body}</p>
-            <button onClick={() => toggleLike(post.id)}>{post.liked ? 'Disliked' : 'Like'} </button>
-            <p>Date: {post.date.toLocalString()}</p>
+            <p>{post.body}</p>
+            <button onClick={handleLikeClick}>{liked ? 'unlike' : 'Like'}</button>
+            <p>{date.toString()}</p>
         </div>
     );
 }

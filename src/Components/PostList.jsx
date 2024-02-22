@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Post from './Components/Post';
+import Post from './Post';
 
 function PostList({ posts, toggleLike, deletePost }) {
   return (
