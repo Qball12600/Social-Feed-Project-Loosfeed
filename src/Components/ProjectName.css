@@ -1,0 +1,26 @@
+.project-name {
+    position: relative;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    font-family: 'Arial Black' , sans-serif;
+    font-size: 48px;
+}
+.left-side, .right-side {
+    flex-grow: 1;
+    text-align: absolute;
+}
+
+
+
+.project-name span {
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    transform: skew(-10deg);
+    display: inline-block;
+}
+.project-name .left-side {
+    transform: rotateY(20deg) rotateX(5deg) translateX(-10);
+}
+.project-name .right-side {
+    transform: rotateY(-20deg) rotateX(5-deg) translateX(10);
+}

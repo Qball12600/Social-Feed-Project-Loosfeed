@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import Header from './Components/Header';
+
 import PostList from './Components/PostList';
 import CreatePostForm from './Components/CreatePostForm';
+import ProjectName from './Components/ProjectName';
 import './App.css';
+
 
 function App() {//list of posts
   const [posts,setPosts] = useState([
@@ -22,10 +24,18 @@ const deletePost = (postId) => {
 
   return (
     <div className="app-container">
-      <Header/>
+      <ProjectName /> {ProjectName}
+      <header addPost={addPost}/>
+      <dic className="content-container"></dic>
       <CreatePostForm addPost={addPost} />
-      <PostList posts={posts} toggleLike={toggleLike} deletePost={deletePost} />
-    </div>
+      <div className="posted-messages-container">
+        <h2>Posted Messages</h2>
+        <div className="posted messages">
+           <PostList posts={posts} toggleLike={toggleLike} deletePost={deletePost} />
+          <footer/>
+        </div>
+      </div>
+   </div>
   );
 }
 export default App;

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+
 import '../App.css';
 
 function CreatePostForm({ addPost}) {// form input values and error messages
@@ -26,27 +27,31 @@ function CreatePostForm({ addPost}) {// form input values and error messages
     };
 
     return (
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          {error && <p style={{color: 'red '}}>{error}</p>}
-          <div className="input-container">
-              <input
-                type="text"
-                placeholder="Your Name" 
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-               />
-            </div>
-            <div className="textarea-container">
-                <textarea
-                  placeholder="Write your post..."
-                  value={body}
-                  onChange={(e) => setBody(e.target.value)}
-                />
-            </div>
-             <button type="submit">Add Post</button>
-           </form>
-      </div>
+         
+                <div className="form-container">
+                    <form onSubmit={handleSubmit}>
+                    {error && <p style={{color: 'red '}}>{error}</p>}
+       
+                <div className="input-container">
+                    <input
+                        type="text"
+                        placeholder="Your Name" 
+                         value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+            
+                <div className="textarea-container">
+                    <textarea
+                        placeholder="Write your post..."
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
+                    />
+                </div>
+                    <button type="submit">Add Post</button>
+                </form>
+                </div>
+         
     );
 
     
