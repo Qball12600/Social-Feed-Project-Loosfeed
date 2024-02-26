@@ -1,11 +1,15 @@
 import React from 'react';
-import '../App.css';
+
 
 function Post ({ post, toggleLike,deletePost }) {
-    const {id, name, body, liked, date} = post;
+    const {id, liked, date} = post;
 
     const handleLikeClick = ()=> {
         toggleLike(id);
+    };
+    
+    const handleDeleteClick = ()=> {
+        deletePost(post.id);
     };
 
     return (
@@ -13,6 +17,7 @@ function Post ({ post, toggleLike,deletePost }) {
             <p>{post.name}</p>
             <p>{post.body}</p>
             <button onClick={handleLikeClick}>{liked ? 'unlike' : 'Like'}</button>
+            <button onClick={handleDeleteClick}>Delete</button>
             <p>{date.toString()}</p>
         </div>
     );

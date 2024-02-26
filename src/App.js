@@ -25,8 +25,8 @@ const deletePost = (postId) => {
   return (
     <div className="app-container">
       <ProjectName /> {ProjectName}
-      <header addPost={addPost}/>
-      <dic className="content-container"></dic>
+      <header/>
+      <div className="content-container"></div>
       <CreatePostForm addPost={addPost} />
       <div className="posted-messages-container">
         <h2>Posted Messages</h2>
